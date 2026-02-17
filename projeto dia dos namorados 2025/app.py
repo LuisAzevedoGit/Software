@@ -39,7 +39,7 @@ def scratch():
     return render_template("scratch.html")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=443, debug=True)
 
 
 
@@ -48,5 +48,6 @@ if __name__ == "__main__":
 #ter atençao ao endereço publico se mudar: 94.60.223.20
 #ir ao site https://whatismyipaddress.com/pt/meu-ip
 #link: http://94.60.223.20:8080/
+
 
 #http://89.114.76.27:8081/
