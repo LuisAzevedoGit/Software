@@ -1,0 +1,92 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/gallery.css">
+    <style>
+        /* Estilos para os corações flutuantes */
+        #hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Evita que interfira na interação com o quiz */
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: 0;
+            color: red;
+            animation: floatUp 5s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="hearts-container"></div>
+</head>
+<body>
+    <audio id="background-music" src="/static/music/Love.mp3" loop autoplay></audio>
+    <div class="slider">
+        <h1>Galeria de Fotos❤️</h1>
+        <div class="slides">
+            <img class="slide" src="/static/images/imagem0-min.jpg" alt="Image #0>
+            <img class="slide" src="/static/images/imagem12-min.jpg" alt="Image #12">
+            <img class="slide" src="/static/images/imagem11-min.jpg" alt="Image #11">
+            <img class="slide" src="/static/images/imagem10-min.jpg" alt="Image #10">
+            <img class="slide" src="/static/images/imagem01-min.jpg" alt="Image #01">
+            <img class="slide" src="/static/images/imagem8-min.jpg" alt="Image #8">
+            <img class="slide" src="/static/images/imagem2-min.jpg" alt="Image #2">
+            <img class="slide" src="/static/images/imagem5-min.jpg" alt="Image #5">  
+            <img class="slide" src="/static/images/imagem6-min.jpg" alt="Image #6">
+            <img class="slide" src="/static/images/imagem7-min.jpg" alt="Image #7">
+            <img class="slide" src="/static/images/imagem1-min.jpg" alt="Image #1">
+            <img class="slide" src="/static/images/imagem4-min.jpg" alt="Image #4">
+            <img class="slide" src="/static/images/imagem13-min.jpg" alt="Image #13">
+            <img class="slide" src="/static/images/imagem14-min.jpg" alt="Image #14">
+            <img class="slide" src="/static/images/imagem02-min.jpg" alt="Image #02">
+            <img class="slide" src="/static/images/imagem3-min.jpg" alt="Image #3">
+            <img class="slide" src="/static/images/imagem15-min.jpg" alt="Image #15">
+            <img class="slide" src="/static/images/imagem16-min.jpg" alt="Image #16">
+            <img class="slide" src="/static/images/imagem17-min.jpg" alt="Image #17">
+            <img class="slide" src="/static/images/imagem18-min.jpg" alt="Image #18">
+            <img class="slide" src="/static/images/imagem19.jpg" alt="Image #19">
+            <img class="slide" src="/static/images/imagem20.jpg" alt="Image #20">
+            <img class="slide" src="/static/images/imagem21.jpg" alt="Image #21">
+            <img class="slide" src="/static/images/imagem22.jpg" alt="Image #22">
+            <img class="slide" src="/static/images/imagem23.jpg" alt="Image #23">
+            <img class="slide" src="/static/images/imagem24.jpg" alt="Image #24">
+            <img class="slide" src="/static/images/imagem25.jpg" alt="Image #25">
+            <img class="slide" src="/static/images/imagem26.jpg" alt="Image #26">
+            <img class="slide" src="/static/images/imagem27.jpg" alt="Image #27">
+            <img class="slide" src="/static/images/imagem28.jpg" alt="Image #28">
+            <img class="slide" src="/static/images/imagem30.jpg" alt="Image #30">
+            
+            
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094</button>
+        <button class="next" onclick="nextSlide()">&#10095</button>
+    </div>
+
+    <script src="/static/js/gallery.js"></script>
+</body>
+</html>

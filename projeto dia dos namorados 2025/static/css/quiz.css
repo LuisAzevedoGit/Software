@@ -1,0 +1,123 @@
+/* Estilo global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe6f2;
+    color: #d63384;
+    text-align: center;
+}
+
+/* Quiz Container */
+.quiz-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff6fb; /* Fundo levemente rosado */
+    border: 2px solid #ff80bf; /* Borda rosa vibrante */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+/* Header do quiz */
+.quiz-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.quiz-header h1 {
+    font-size: 2.5rem;
+    color: #ff4da6;
+    margin: 0;
+}
+
+/* Pergunta do quiz */
+.quiz-question {
+    font-size: 1.6rem;
+    margin: 20px 0;
+    color: #d63384;
+    font-weight: bold;
+    background-color: #ffe6f2;
+    padding: 15px;
+    border-radius: 8px;
+
+    /* Destaques adicionais */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra no texto */
+    border: 2px solid #ff80bf; /* Borda ao redor das perguntas */
+    text-decoration: underline; /* Sublinhado */
+}
+
+/* Respostas */
+.quiz-options {
+    list-style: none;
+    padding: 0;
+}
+
+.quiz-options li {
+    margin: 10px 0;
+}
+
+.quiz-options label {
+    display: block;
+    padding: 12px;
+    background-color: #ff80bf;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.quiz-options label:hover {
+    background-color: #d63384;
+    transform: scale(1.05);
+}
+
+/* Esconde os botões de rádio */
+.quiz-options input[type="radio"] {
+    display: none;
+}
+
+/* Botão de envio */
+.quiz-button {
+    display: inline-block;
+    padding: 15px 25px;
+    margin-top: 20px;
+    background-color: #ff80bf;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    border: none;
+}
+
+.quiz-button:hover {
+    background-color: #d63384;
+    transform: scale(1.05);
+}
+
+/* Resultados */
+.quiz-results {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .quiz-container {
+        padding: 15px;
+    }
+    .quiz-question {
+        font-size: 1.2rem;
+    }
+    .quiz-button {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}

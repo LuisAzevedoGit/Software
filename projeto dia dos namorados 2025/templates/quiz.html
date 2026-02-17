@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizz Romântico</title>
+    <link rel="stylesheet" href="/static/css/quiz.css">
+    <style>
+        /* Estilos para os corações flutuantes */
+        #hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Evita que interfira na interação com o quiz */
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: 0;
+            color: red;
+            animation: floatUp 5s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="hearts-container"></div>
+    <audio id="background-music" src="/static/music/guitarra.mp3" loop autoplay></audio>
+
+    <div class="content">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h1>QUIZ:</h1>
+            </div>
+        <form id="quiz-form">
+            <div class="quiz-question-block">
+            <p>1. Qual foi a nossa primeira musica?</p>
+            <label><input type="radio" name="q1" value="Cheiro de sexo - TZ"> Cheiro de sexo - TZ</label><br>
+            <label><input type="radio" name="q1" value="Tempo - FRANKIEONTHEGUITAR T-Rex, Lon3r Johny"> Tempo - FRANKIEONTHEGUITAR T-Rex, Lon3r Johny</label><br>
+            <label><input type="radio" name="q1" value="Diamante - Lon3r Johny, Plutonio "> Diamante - Lon3r Johny, Plutonio</label><br>
+            <label><input type="radio" name="q1" value="Mo Boy - Dillaz"> Mo Boy - Dillaz</label><br>
+        
+
+            <p>2. Qual é a minha ideia de um encontro perfeito?</p>
+            <label><input type="radio" name="q2" value="Cinema"> Cinema</label><br>
+            <label><input type="radio" name="q2" value="Piquenique"> Piquenique</label><br>
+            <label><input type="radio" name="q2" value="Jantar Romântico"> Jantar Romântico</label><br>
+            <label><input type="radio" name="q2" value="Praia"> Praia</label><br>
+
+            <p>3. Qual a minha cor favorita?</p>
+            <label><input type="radio" name="q3" value="Azul"> Azul</label><br>
+            <label><input type="radio" name="q3" value="Branco"> Branco</label><br>
+            <label><input type="radio" name="q3" value="Preto"> Preto</label><br>
+            <label><input type="radio" name="q3" value="Vermelho"> Vermelho</label><br>
+
+            <p>4. Onde foi o nosso primeiro beijo?</p>
+            <label><input type="radio" name="q4" value="Santo Tirso"> Santo Tirso</label><br>
+            <label><input type="radio" name="q4" value="Barcelos"> Barcelos</label><br>
+            <label><input type="radio" name="q4" value="Vizela"> Vizela</label><br>
+            <label><input type="radio" name="q4" value="Povoa de Varzim"> Povoa de Varzim</label><br>
+
+            <p>5. Qual é a minha serie favorita?</p>
+            <label><input type="radio" name="q5" value="Peaky Blinders"> Peaky Blinders</label><br>
+            <label><input type="radio" name="q5" value="Vikings"> Vikings</label><br>
+            <label><input type="radio" name="q5" value="Prison Break"> Prison Break</label><br>
+            <label><input type="radio" name="q5" value="Breaking Bad"> Breaking Bad</label><br>
+
+            <p>6. Qual é o meu carro favorito?</p>
+            <label><input type="radio" name="q6" value="Mazda RX-7 Veilside"> Mazda RX-7 Veilside</label><br>
+            <label><input type="radio" name="q6" value="Nissan GTR R-35"> Nissan GTR R-35</label><br>
+            <label><input type="radio" name="q6" value="Porsche 911 GT3"> Porsche 911 GT3</label><br>
+            <label><input type="radio" name="q6" value="Toyota Supra MK4"> Toyota Supra MK4</label><br>
+
+            <p>7. Onde fomos no dia em que aceitaste o pedido de namoro?</p>
+            <label><input type="radio" name="q7" value="Parque em Guimarães"> Parque em Guimarães</label><br>
+            <label><input type="radio" name="q7" value="Kasablanca - Guimarães"> Kasa - Guimarães</label><br>
+            <label><input type="radio" name="q7" value="Centro Histórico de Braga"> Centro Histórico de Braga</label><br>
+            <label><input type="radio" name="q7" value="Receção Caloiro - Vila Real"> Receção Caloiro - Vila Real</label><br>
+
+            <p>8. Jogo de Historia favorito ?</p>
+            <label><input type="radio" name="q8" value="Counter-Strike"> Counter-Strike</label><br>
+            <label><input type="radio" name="q8" value="GTA V"> GTA V</label><br>
+            <label><input type="radio" name="q8" value="Marvel Spider-Man"> Marvel Spider-Man</label><br>
+            <label><input type="radio" name="q8" value="Red Dead Redemption 2"> Red Dead Redemption 2</label><br>
+
+            <p>9. Super-Heroi favorito?</p>
+            <label><input type="radio" name="q9" value="Spider-Man"> Spider-Man</label><br>
+            <label><input type="radio" name="q9" value="Hulk"> Hulk</label><br>
+            <label><input type="radio" name="q9" value="Homem de Ferro"> Homem de Ferro</label><br>
+            <label><input type="radio" name="q9" value="Batman"> Batman</label><br>
+
+            <p>10. Qual é a minha viagem de sonho contigo?</p>
+            <label><input type="radio" name="q10" value="Tóquio - Japão "> Tóquio - Japão</label><br>
+            <label><input type="radio" name="q10" value="Paris - França"> Paris - França</label><br>
+            <label><input type="radio" name="q10" value="Roma - Itália"> Roma - Itália</label><br>
+            <label><input type="radio" name="q10" value="Londres - Inglaterra"> Londres - Inglaterra</label><br>
+
+            <button type="button" id="submit-quiz" class="button">Enviar</button>
+        </form>
+
+        <div id="feedback" style="margin-top: 20px; font-size: 18px;"></div>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            q1: "Tempo - FRANKIEONTHEGUITAR T-Rex, Lon3r Johny",
+            q2: "Praia",
+            q3: "Azul",
+            q4: "Vizela",
+            q5: "Peaky Blinders",
+            q6: "Mazda RX-7 Veilside",
+            q7: "Kasablanca - Guimarães",
+            q8: "Red Dead Redemption 2",
+            q9: "Spider-Man",
+            q10: "Roma - Itália"
+        };
+
+        document.getElementById('submit-quiz').addEventListener('click', () => {
+            const form = document.getElementById('quiz-form');
+            const feedback = document.getElementById('feedback');
+            let score = 0;
+
+            // Verificar respostas
+            for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
+                const selected = form.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswer) {
+                    score++;
+                }
+            }
+
+            // Exibir feedback
+            feedback.textContent = `Acertaste ${score} de ${Object.keys(correctAnswers).length} perguntas!`;
+        });  
+        </script>
+        <script src="/static/js/script.js"></script>
+</body>
+</html>

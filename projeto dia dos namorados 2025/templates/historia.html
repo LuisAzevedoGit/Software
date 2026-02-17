@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa História</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div id="story-container">
+        <!-- Título, Foto e Texto -->
+        <div id="story-content">
+            <h2 id="story-title" class="story-title">🌟 O Início 🌟</h2>
+            <img id="story-image" src="/static/images/imagem10.jpg" alt="Nossa história" class="historia-image">
+            <div id="story-text" class="story-text">
+                <p>
+                    Tudo começou como um encontro inesperado, mas com uma conexão que parecia predestinada. 
+                    Lembro-me do primeiro sorriso que você me deu — um momento que ficou gravado para sempre no meu coração.
+                </p>
+            </div>
+        </div>
+
+        <!-- Navegação -->
+        <div id="story-navigation">
+            <button id="prev-button" class="button">Voltar</button>
+            <button id="next-button" class="button">Avançar</button>
+        </div>
+    </div>
+
+    <script>
+        // Dados da História
+        const storyData = [
+            {
+                image: "/static/images/imagem0-min.jpg",
+                title: "🌟 O Início 🌟",
+                text: "Tudo começou com um beijo inesperado, mas com uma ligação que parecia predestinada. Recordo-me desse dia até aos dias de hoje, um momento que ficou gravado para sempre no meu coração."
+            },
+            {
+                image: "/static/images/imagem8-min.jpg",
+                title: "💞 Primeiras Aventuras 💞",
+                text: "Desde as primeiras aventuras juntos, como os passeios pelo centro das cidades, pelas praias e parques, e das longas conversas no final a ver as estrelas, percebi que estar ao teu lado fazia tudo parecer especial e único."
+            },
+            {
+                image: "/static/images/imagem15-min.jpg",
+                title: "🎉 Nossas Conquistas 🎉",
+                text: "Juntos, apoiamo-nos mutuamente em todas as etapas da vida, superando desafios e tornando-nos o pilar um do outro. És o meu maior motivo para nunca desistir e batalhar sempre para atingir os meus sonhos. Cada conquista torna-se ainda mais especial e inesquecível porque a partilho contigo, a minha maior inspiração e força."
+            },
+            {
+                image: "/static/images/imagem29.jpg",
+                title: "✨ Momentos Simples ✨",
+                text: "Entre risos e abraços, os momentos mais simples tornaram-se os mais preciosos. Contigo, aprendi a valorizar cada instante, porque ao teu lado até o mais pequeno gesto se transforma em algo especial."
+            },
+            {
+                image: "/static/images/imagem24.jpg",
+                title: "🌹 Nosso Futuro 🌹",
+                text: "Ao olhar para o futuro, vejo um mundo repleto de possibilidades e oportunidades. Quero partilhar todos os meus sonhos, conquistas e aventuras contigo. Amo-te!❤️💞"
+            }
+        ];
+
+        let currentPage = 0;
+
+        // Elementos DOM
+        const storyTitle = document.getElementById("story-title");
+        const storyImage = document.getElementById("story-image");
+        const storyText = document.getElementById("story-text");
+        const prevButton = document.getElementById("prev-button");
+        const nextButton = document.getElementById("next-button");
+
+        // Atualiza a página
+        function updatePage() {
+            const currentData = storyData[currentPage];
+            storyTitle.textContent = currentData.title;
+            storyImage.src = currentData.image;
+            storyText.innerHTML = `<p>${currentData.text}</p>`;
+            prevButton.style.display = currentPage === 0 ? "none" : "inline-block";
+            nextButton.style.display = currentPage === storyData.length - 1 ? "none" : "inline-block";
+        }
+
+        // Navegação
+        prevButton.addEventListener("click", () => {
+            if (currentPage > 0) {
+                currentPage--;
+                updatePage();
+            }
+        });
+
+        nextButton.addEventListener("click", () => {
+            if (currentPage < storyData.length - 1) {
+                currentPage++;
+                updatePage();
+            }
+        });
+
+        // Inicializar a página
+        updatePage();
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe6f2;
+    color: #d63384;
+    text-align: center;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* O corpo ocupa 100% da altura da tela */
+    overflow: hidden; /* Impede rolagem */
+    background-color: #ffe6f2; /* Cor de fundo, ajustável */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    
+}
+
+
+.slider{
+    position: relative;
+    max-width: 300px; /* Largura máxima do contêiner */
+    margin: auto;
+    overflow: hidden;
+}
+.slider img{
+    max-width: 350px; /* Ajuste o tamanho máximo da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+img.displaySlide{
+    display: block;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.slider button{
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    padding: 5px 7px;
+    background-color: hsla(0, 0%, 0%, 0.2);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.prev{
+    left: 0;
+}
+.next{
+    right: 0;
+}
+@keyframes fade {
+    from {opacity: .5}
+    to {opacity: 1}
+}

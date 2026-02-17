@@ -1,0 +1,114 @@
+#story-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff5f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.story-title {
+    font-family: 'Georgia', serif;
+    color: #cd0717;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.historia-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.story-text {
+    line-height: 1.8;
+    color: #d63384;
+    font-weight: bold;
+    background-color: #fff5f8;
+}
+
+#story-navigation {
+    margin-top: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.button:hover {
+    background-color: #d62828;
+}
+
+
+
+
+/* Estilo para o Menu Inicial */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe6f2;
+    text-align: center;
+    color: #d63384;
+}
+
+.menu {
+    padding: 50px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.menu-image {
+    max-width: 300px; /* Ajuste o tamanho máximo da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.historia-image{
+    max-width: 300px; /* Ajuste o tamanho máximo da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Deixa os botões do menu organizados na vertical */
+.menu-options {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column; /* Alinha os itens na vertical */
+    align-items: center; /* Centraliza os botões no eixo horizontal */
+    gap: 15px; /* Espaço entre os botões */
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #ff80bf;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    width: 200px; /* Define uma largura fixa para os botões */
+    text-align: center; /* Centraliza o texto dentro do botão */
+}
+
+.button:hover {
+    background-color: #d63384;
+}

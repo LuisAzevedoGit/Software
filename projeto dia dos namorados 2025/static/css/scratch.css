@@ -1,0 +1,139 @@
+.sc__next-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sc__next-button:hover {
+  background-color: #45a049;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe4e1; /* Rosa claro */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: #ff69b4; /* Texto rosa */
+}
+
+.content {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #ff69b4; /* Texto rosa */
+}
+
+h1 {
+    color: #ff1493; /* Rosa mais escuro */
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+
+.button {
+    display: inline-block;
+    background-color: #ff69b4; /* Rosa brilhante */
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background-color: #ff85c1; /* Rosa mais claro */
+}
+
+
+#js--completion-message {
+  margin-top: 20px; /* Espaçamento entre o botão e a mensagem */
+  color: green;
+  font-size: 1.2rem;
+  text-align: center; /* Centraliza a mensagem */
+}
+
+
+
+
+.sc__wrapper {
+    display: block;
+    width: 100%;
+    height: 400px;
+    max-width: 300px;
+    margin: 0 auto;
+    border: 15px ;
+  }
+  
+  .sc__container {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    max-width: 300px;
+  }
+  
+  .sc__container > img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+  
+  .sc__container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+  
+  .inner_html {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: table;
+    background-image: linear-gradient(90deg, hsla(29, 92%, 70%, 1) 0%, hsla(0, 87%, 73%, 1) 100%);
+  }
+  
+  .inner_html p {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    animation: pulse 0.5s ease-in-out infinite both;
+    -webkit-animation: pulse 0.5s ease-in-out infinite both;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+    
+  }
