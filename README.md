@@ -1,1 +1,1 @@
-# GF-APP
+Repositório com softwares desenvolvidos.
