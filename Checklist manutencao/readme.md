@@ -13,7 +13,6 @@ O sistema foi desenvolvido com o objetivo de digitalizar processos que normalmen
 - Centralizar o registo de manutenções
 - Automatizar o cálculo de próximas intervenções
 - Facilitar a criação de ordens de trabalho
-- Permitir anexar evidências (imagens/documentos)
 - Melhorar o controlo e histórico das máquinas
 
 ---
