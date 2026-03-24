@@ -171,6 +171,8 @@ CREATE TABLE ordens (
 ### 💻 Hardware e Infraestrutura
 
 Este projeto foi implementado numa Máquina Virtual (VM) hospedada num servidor da empresa: Tesco - Componentes para Automóveis, Lda.
+O engenheiro Rui Martins  utiliza o dispositivo Microsoft Surface GO 4 e acede ao software através da browser com o IP fornecido pelo engenheiro informático.
+
 
 ### ⚙️ Configuração da VM
 
