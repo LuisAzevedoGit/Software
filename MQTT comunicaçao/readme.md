@@ -5,7 +5,9 @@
 
 ## 👨‍💻 Desenvolvimento do Projeto
 - Luís Azevedo — Engenheiro Informático  
-- Ricardo Carvalho — Engenheiro do departamento de produção, Líder de projeto Shopfloor  
+- Ricardo Carvalho — Engenheiro do departamento de produção, Líder de projeto Shopfloor
+- Multiverso - Equipa Desenvolvimento do Software
+- Daniel Porras - Engenheiro de aplicações empresa FANUC Iberia S.L.U, suporte com base de dados MTLINKi 
 
 ## 📝 Autor da Documentação
 - Luís Azevedo  
@@ -34,7 +36,7 @@ O principal objetivo é garantir uma comunicação rápida, desacoplada e escal�
 
 ## ⚙️ Como funciona
 
-1. O sistema liga-se ao **MongoDB (MTLINKi)**  
+1. O sistema liga-se à base de dados **MongoDB (MTLINKi)**  
 2. Liga-se ao **broker MQTT (Mosquitto)**  
 3. Carrega o último `_id` processado (para evitar duplicados)  
 4. A cada intervalo de tempo:
@@ -142,17 +144,7 @@ Campos utilizados:
 
 ## 💻 Arquitetura do Sistema
 
-MongoDB (MTLINKi)
-│
-▼
-Script Python (Monitorização)
-│
-▼
-Broker MQTT (Mosquitto)
-│
-▼
-Consumidores (Dashboards, APIs, Sistemas externos)
-
+MongoDB (MTLINKi) ---> Script Python ---> Broker MQTT ---> Software Shopfloor
 
 
 ---
@@ -182,9 +174,9 @@ Consumidores (Dashboards, APIs, Sistemas externos)
 
 Este serviço é executado num ambiente interno da empresa, integrado com:
 
-- Servidor MongoDB industrial (MTLINKi)  
-- Broker MQTT Mosquitto  
-- Rede interna da fábrica  
+- Servidor com software MTLINKi e respetiva base de dados (MongoDB)  
+- Servidor com Broker MQTT Mosquitto e Python  
+- Software Shopfloor  
 
 ---
 
