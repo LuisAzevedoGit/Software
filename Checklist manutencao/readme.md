@@ -131,7 +131,7 @@ CREATE TABLE registos (
     assinatura LONGTEXT,
     anexos JSON
 );
-
+```
 Descrição dos campos:
 
 id → Identificador único da checklist
@@ -148,6 +148,7 @@ anexos → Lista de ficheiros anexados (JSON)
 
 Armazena ordens de trabalho geradas a partir das checklists.
 
+```sql
 CREATE TABLE ordens (
     id INT AUTO_INCREMENT PRIMARY KEY,
     checklist_id VARCHAR(50),
@@ -157,7 +158,7 @@ CREATE TABLE ordens (
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     concluido BOOLEAN
 );
-
+```
 
 💻 Hardware e Infraestrutura
 
