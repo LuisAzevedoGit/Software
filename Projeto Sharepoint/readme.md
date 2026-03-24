@@ -124,6 +124,265 @@ A intranet funciona como um ponto único de acesso à informação da empresa, p
 
 ---
 
+
+
+
+
+
+
+## 🧩 Estrutura da Solução
+
+### 🏠 Intranet Corporativa
+- Portal central de acesso à informação  
+- Notícias, comunicados e destaques institucionais  
+- Links rápidos para aplicações internas  
+- Pesquisa global integrada  
+
+---
+
+### 🏭 Portal Engenharia
+Gestão de documentação técnica:
+
+- Desenhos técnicos (internos e externos)  
+- Projetos  
+- Documentação de suporte técnico  
+
+Classificação baseada em:
+- Cliente  
+- Projeto  
+- Família  
+- Modelo  
+
+✔ Workflow de aprovação (3 níveis)  
+✔ Controlo de versões  
+✔ Publicação controlada  
+
+---
+
+### 📋 Portal Qualidade
+Gestão do Sistema de Gestão:
+
+- Políticas  
+- Procedimentos  
+- Instruções  
+- Auditorias  
+- Reclamações  
+- Avaliação de fornecedores  
+
+✔ Revisões periódicas  
+✔ Conformidade normativa  
+✔ Histórico de alterações  
+
+---
+
+### 📁 Área Comum (Documentos Aprovados)
+- Documentos finais aprovados  
+- Acesso em modo leitura  
+- Disponível para toda a organização  
+
+---
+
+### ⚙️ Área de Administração
+- Gestão de metadados  
+- Configuração de workflows  
+- Gestão de permissões  
+- Parametrização global  
+
+---
+
+## 🔄 Workflows Documentais
+
+### 🔹 Engenharia (3 níveis)
+1. Submissão  
+2. Validação técnica  
+3. Aprovação (Direção)  
+4. Publicação automática  
+
+---
+
+### 🔹 Qualidade (2-3 níveis)
+1. Submissão  
+2. Validação Qualidade  
+3. Aprovação final  
+4. Publicação  
+
+---
+
+### 📊 Estados Documentais
+
+- Rascunho  
+- Em Aprovação  
+- Aprovado  
+- Obsoleto  
+
+---
+
+## 🧠 Modelo de Dados e ECM
+
+A solução segue um modelo de **Enterprise Content Management (ECM)** baseado em:
+
+### 📋 Metadados Estruturados
+- Classificação independente de pastas  
+- Pesquisa avançada  
+- Organização escalável  
+
+---
+
+### 📁 Content Types
+- Desenhos Técnicos  
+- Procedimentos  
+- Políticas  
+- Auditorias  
+- Avaliações  
+
+---
+
+### 🔢 Codificação Documental
+- Geração automática de códigos  
+- Normalização de nomenclaturas  
+- Consistência organizacional  
+
+---
+
+### 📊 Estruturas Base
+- Clientes  
+- Projetos  
+- Produtos  
+- Fornecedores  
+- Departamentos  
+
+---
+
+## 🔍 Pesquisa e Acesso à Informação
+
+- Pesquisa global no SharePoint  
+- Filtros por:
+  - Cliente  
+  - Projeto  
+  - Tipo documental  
+  - Estado  
+- Localização rápida de documentos  
+
+---
+
+## 🔔 Notificações e Alertas
+
+Sistema automatizado com Power Automate:
+
+- Submissão de documentos  
+- Aprovação / rejeição  
+- Alteração de estado  
+- Publicação de versões  
+- Alertas de revisão periódica  
+- Processos pendentes  
+
+📩 Integração:
+- Outlook  
+- Microsoft Teams  
+
+---
+
+## 🔐 Gestão de Permissões
+
+### Perfis
+
+- Administrador  
+- Membro (edição)  
+- Visitante (consulta)  
+
+---
+
+### Princípios
+
+- Separação rascunho vs publicado  
+- Acesso por grupos  
+- Segregação por departamento  
+- Controlo ao nível de site, biblioteca e documento  
+- Auditoria de acessos  
+
+---
+
+## 🧰 Tecnologias Utilizadas
+
+- Microsoft 365  
+- SharePoint Online  
+- Power Automate  
+- Power Apps  
+- Microsoft Teams  
+- Outlook  
+- OneDrive  
+
+---
+
+## ⚙️ Metodologia do Projeto
+
+### 📌 Fases
+
+1. Levantamento de requisitos  
+2. Business Blueprint (documento base)  
+3. Implementação técnica  
+4. Testes e validação  
+5. Formação  
+6. Go-Live  
+7. Suporte  
+
+---
+
+## ⏱️ Planeamento
+
+- Levantamento: concluído em Fevereiro 2026  
+- Implementação: Fevereiro – Março 2026  
+- Go-Live: Março 2026  
+- Suporte pós Go-Live: 5 dias  
+
+---
+
+## 📊 Benefícios
+
+- Centralização da informação  
+- Redução de erros e duplicação  
+- Aumento da produtividade  
+- Melhor comunicação interna  
+- Rastreabilidade completa  
+- Suporte a auditorias e conformidade  
+
+---
+
+## ⚠️ Considerações
+
+- Dependente do licenciamento Microsoft 365  
+- Necessidade de envolvimento dos utilizadores  
+- Integrações externas fora do âmbito inicial  
+- Plataforma preparada para evolução  
+
+---
+
+## 🔮 Melhorias Futuras
+
+- Integração com ERP / CRM  
+- Dashboards com Power BI  
+- Automação avançada  
+- Integração com IA (Copilot)  
+- Expansão para outros departamentos  
+
+---
+
+## 📌 Conclusão
+
+Este projeto implementa uma solução completa de **Enterprise Content Management (ECM)**, permitindo à organização evoluir para um modelo digital estruturado, seguro e escalável.
+
+A plataforma garante controlo documental, automatização de processos e melhoria da eficiência operacional, alinhando-se com as melhores práticas do ecossistema Microsoft.
+
+
+
+
+
+
+
+
+
+
+
 ## ⚙️ Metodologia do Projeto
 
 O projeto foi desenvolvido com uma abordagem **ágil e iterativa**, garantindo entregas contínuas e validação constante.
