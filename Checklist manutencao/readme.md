@@ -25,7 +25,7 @@ O sistema foi desenvolvido com o objetivo de digitalizar processos que normalmen
    - Realizado
    - Reparação não urgente
    - Reparação urgente
-   - [Vazio]
+   - [Vazio] -> Não realizado
 4. O sistema calcula automaticamente a **próxima verificação**, cujo o estado seja igual a "Realizado". Por outro lado, se for alguma outra opção essas mesma tarefas são adicionadas automaticamente as "ordens de trabalho". 
 5. Pode adicionar:
    - 📝 Relatório
