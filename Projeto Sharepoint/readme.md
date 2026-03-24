@@ -1,12 +1,12 @@
-🛠️ Sistema de Monitorização de Produção via MQTT
-🏢 Empresa
+# 🛠️ Sistema de Monitorização de Produção via MQTT
+## 🏢 Empresa
 Tesco - Componentes para Automóveis, Lda.
-👨‍💻 Desenvolvimento do Projeto
+## 👨‍💻 Desenvolvimento do Projeto
 Luís Azevedo — Engenheiro Informático, Project Manager
 Ricardo Silva — Manager departamento de compras, Project Manager
 ITGest - Equipa Desenvolvimento do Software
 Hydra.IT - Equipa Desenvolvimento do Software
-📝 Autor da Documentação
+## 📝 Autor da Documentação
 Luís Azevedo
 ## 📌 Descrição
 
