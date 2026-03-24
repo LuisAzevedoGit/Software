@@ -61,7 +61,8 @@ O sistema deteta automaticamente novos registos de produção e tempos de máqui
 - MongoDB
 
 ### 🔹 Comunicação
-- MQTT (Mosquitto)
+- Eclipse Mosquitto
+- MQTTX
 
 ### 🔹 Bibliotecas Python
 - pymongo → ligação ao MongoDB  
