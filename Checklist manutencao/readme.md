@@ -1,8 +1,9 @@
 # 🛠️ Sistema de Gestão de Checklists de Manutenção
-
+## Empresa Tesco - Componentes para Automóveis, Lda. 
+---
 ## 📌 Descrição
 
-Este projeto consiste numa aplicação web para gestão de checklists de manutenção industrial, permitindo registar, acompanhar e gerir intervenções em máquinas de forma simples e eficiente.
+Este projeto consiste numa aplicação web para gestão de checklists de manutenção industrial, permitindo registar, acompanhar e gerir intervenções em máquinas de forma simples e eficiente. 
 
 O sistema foi desenvolvido com o objetivo de digitalizar processos que normalmente são feitos em papel, aumentando a organização, rastreabilidade e produtividade das equipas de manutenção.
 
@@ -110,30 +111,72 @@ O sistema foi desenvolvido com o objetivo de digitalizar processos que normalmen
 
 ---
 
-## 🗂️ Estrutura da base de dados
-Database manutencao:
+## 🗂️ Estrutura da Base de Dados
 
-Tabela registos:
+Base de dados: `manutencao`
+
+---
+
+### 📋 Tabela `registos`
+Armazena todas as checklists preenchidas pelos utilizadores.
+
+```sql
 CREATE TABLE registos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     maquina VARCHAR(50),
-nome VARCHAR(50),
+    nome VARCHAR(50),
     data_registro DATETIME NOT NULL,
     acoes JSON,
     relatorio TEXT,
     assinatura LONGTEXT,
-anexos JSON
+    anexos JSON
 );
 
-Tabela ordens:
-CREATE TABLE ordens(
-id INT AUTO_INCREMENT PRIMARY KEY,
-checklist_id VARCHAR(50),
-nome_maquina VARCHAR(100),
-descricao VARCHAR(100),
-reparacoes_json JSON,
-criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-concluido BOOLEAN
+Descrição dos campos:
+
+id → Identificador único da checklist
+maquina → ID da máquina
+nome → Nome da máquina
+data_registro → Data e hora do registo
+acoes → Lista de ações da checklist (JSON)
+relatorio → Observações do utilizador
+assinatura → Assinatura digital (base64)
+anexos → Lista de ficheiros anexados (JSON)
+
+
+🛠️ Tabela ordens
+
+Armazena ordens de trabalho geradas a partir das checklists.
+
+CREATE TABLE ordens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    checklist_id VARCHAR(50),
+    nome_maquina VARCHAR(100),
+    descricao VARCHAR(100),
+    reparacoes_json JSON,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    concluido BOOLEAN
 );
 
 
+💻 Hardware e Infraestrutura
+
+Este projeto foi implementado numa Máquina Virtual (VM) hospedada num servidor da empresa: Tesco - Componentes para Automóveis, Lda.
+
+⚙️ Configuração da VM
+
+A VM foi configurada pelo Engenheiro Informático Luís Azevedo, incluindo:
+
+- Atribuição de recursos necessários (storage, cpu, ram,...) atraves do VMware® vSphere
+- Instalação do sistema operativo Windows
+- Configuração inicial do ambiente
+- Integração no domínio da empresa
+- Configuração de IP estático (rede interna)
+- Configuração de DNS
+- Atualizações do sistema operativo
+
+🧰 Software Instalado
+- Visual Studio Code
+- MySQL Server 8.0
+- Node.js
+ 
