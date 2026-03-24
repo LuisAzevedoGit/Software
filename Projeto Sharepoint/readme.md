@@ -168,7 +168,8 @@ O projeto foi desenvolvido com uma abordagem **ágil e iterativa**, garantindo e
 
 - Solução dependente do Microsoft 365  
 - Licenciamento necessário para utilizadores  
-- Projeto executado maioritariamente de forma remota  
+- Projeto executado maioritariamente de forma remota
+- Assinar acordo de confidencialidade antes do inicio de desenvolvimento.
 
 ---
 
