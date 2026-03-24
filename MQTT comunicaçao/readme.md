@@ -207,3 +207,10 @@ Este serviço é executado num ambiente interno da empresa, integrado com:
 - Em caso de falha no MongoDB ou MQTT, o sistema tenta recuperar automaticamente  
 - A utilização de `_id` garante ordem cronológica dos registos  
 
+## 🚀 Automatizar
+De forma a otimizar todo este processo foi criado um ficheiro do tipo .bat(run.bat), em que toda a vez que o computador liga-se o ficheiro corre automaticamente recorrendo ao task scheduler.
+Conteudo ficheiro:
+cd "C:\Users\administrator.TESCO\Desktop\mtlink mqtt"
+py app_final.py &
+
+
