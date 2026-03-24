@@ -25,7 +25,8 @@ O sistema foi desenvolvido com o objetivo de digitalizar processos que normalmen
    - Realizado
    - Reparação não urgente
    - Reparação urgente
-4. O sistema calcula automaticamente a **próxima verificação**
+   - [Vazio]
+4. O sistema calcula automaticamente a **próxima verificação**, cujo o estado seja igual a "Realizado". Por outro lado, se for alguma outra opção essas mesma tarefas são adicionadas automaticamente as "ordens de trabalho". 
 5. Pode adicionar:
    - 📝 Relatório
    - 📎 Anexos (imagens/documentos)
@@ -35,7 +36,7 @@ O sistema foi desenvolvido com o objetivo de digitalizar processos que normalmen
    - 🔍 Consultar checklists
    - ✏️ Editar
    - 🗑️ Eliminar
-   - 🛠️ Criar ordens de trabalho
+   - 🛠️ Gerir ordens de trabalho
 
 ---
 
@@ -97,21 +98,42 @@ O sistema foi desenvolvido com o objetivo de digitalizar processos que normalmen
 - Alteração de estados
 - Atualização de datas
 - Adição/remoção de anexos
+- Eliminar a checklist, com confirmação antes de eliminar
 
 ---
 
-### 🗑️ Eliminação
-- Remoção completa de checklists
-- Confirmação antes de eliminar
-
----
 
 ### 🛠️ Ordens de Trabalho
 - Criação baseada em checklists
-- Gestão de reparações
+- Gestão de reparações, atribuição de data e responsavel.
 - Marcação de tarefas como concluídas
 
 ---
 
-## 🗂️ Estrutura do Projeto
+## 🗂️ Estrutura da base de dados
+Database manutencao:
+
+Tabela registos:
+CREATE TABLE registos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    maquina VARCHAR(50),
+nome VARCHAR(50),
+    data_registro DATETIME NOT NULL,
+    acoes JSON,
+    relatorio TEXT,
+    assinatura LONGTEXT,
+anexos JSON
+);
+
+Tabela ordens:
+CREATE TABLE ordens(
+id INT AUTO_INCREMENT PRIMARY KEY,
+checklist_id VARCHAR(50),
+nome_maquina VARCHAR(100),
+descricao VARCHAR(100),
+reparacoes_json JSON,
+criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+concluido BOOLEAN
+);
+
 
