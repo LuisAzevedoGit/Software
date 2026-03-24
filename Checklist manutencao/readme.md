@@ -1,8 +1,16 @@
 # 🛠️ Sistema de Gestão de Checklists de Manutenção
-## Empresa Tesco - Componentes para Automóveis, Lda. 
-## Autor do documento: Luís Azevedo
-## Desenvolvimento do projeto: Luís Azevedo, engenheiro informático e ainda, o engenheiro e lider da equipa de manutenção, Rui Martins
----
+
+
+##🏢 Empresa
+
+Tesco - Componentes para Automóveis, Lda.
+
+##👨‍💻 Desenvolvimento do Projeto
+Luís Azevedo — Engenheiro Informático
+Rui Martins — Engenheiro e Líder da Equipa de Manutenção
+##📝 Autor da Documentação
+Luís Azevedo
+
 ## 📌 Descrição
 
 Este projeto consiste numa aplicação web para gestão de checklists de manutenção industrial, permitindo registar, acompanhar e gerir intervenções em máquinas de forma simples e eficiente. 
