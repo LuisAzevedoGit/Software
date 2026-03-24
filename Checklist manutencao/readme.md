@@ -144,7 +144,7 @@ assinatura → Assinatura digital (base64)
 anexos → Lista de ficheiros anexados (JSON)
 
 
-🛠️ Tabela ordens
+### 🛠️ Tabela ordens
 
 Armazena ordens de trabalho geradas a partir das checklists.
 
@@ -160,11 +160,11 @@ CREATE TABLE ordens (
 );
 ```
 
-💻 Hardware e Infraestrutura
+### 💻 Hardware e Infraestrutura
 
 Este projeto foi implementado numa Máquina Virtual (VM) hospedada num servidor da empresa: Tesco - Componentes para Automóveis, Lda.
 
-⚙️ Configuração da VM
+### ⚙️ Configuração da VM
 
 A VM foi configurada pelo Engenheiro Informático Luís Azevedo, incluindo:
 
