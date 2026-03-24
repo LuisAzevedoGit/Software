@@ -19,8 +19,7 @@
 Este projeto consiste num serviço de monitorização em tempo real que liga uma base de dados industrial (MongoDB) a um sistema de comunicação MQTT.
 
 O sistema deteta automaticamente novos registos de produção e tempos de máquina, enviando esses dados para um broker MQTT, permitindo a sua utilização em dashboards, sistemas de análise ou outras aplicações industriais.
-
-O principal objetivo é garantir uma comunicação rápida, desacoplada e escalável entre sistemas industriais.
+   
 
 ---
 
@@ -73,6 +72,27 @@ O principal objetivo é garantir uma comunicação rápida, desacoplada e escal�
 - os → gestão de ficheiros  
 
 ---
+## ⚙️ Configuração do Mosquitto
+1. Aceder à pasta C:\Program Files\mosquitto
+2. Editar mosquitto.conf
+3. Adicionar as seguintes linhas:
+   - listener 1883 0.0.0.0
+   - allow_anonymous true
+5. Reiniciar serviço do Mosquitto.
+6. Abrir a porta 1883 na firewall (PowerShell como administrador):
+   - netsh advfirewall firewall add rule name="Mosquitto MQTT" dir=in action=allow protocol=TCP localport=1883
+
+## 📡 Configuração do Cliente MQTT (MQTTX)
+Criar nova ligação com:
+
+- Name: Tesco
+- Host: 192.168.100.19
+- Port: 1883
+- Protocol: MQTT/TCP
+### 📥 Tópicos a subscrever
+- tesco/producao
+- tesco/tempos
+  
 
 ## 🚀 Funcionalidades
 
