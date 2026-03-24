@@ -25,15 +25,14 @@ A intranet funciona como um ponto único de acesso à informação da empresa, p
 - Implementar gestão documental estruturada  
 - Automatizar processos internos  
 - Promover colaboração e partilha de conhecimento  
-- Reforçar a cultura organizacional  
+- Ter mais controlo de permissões de acesso à documentação
 
 ## 🚀 Funcionalidades
 
 ### 🌐 Portal Intranet
 - Página principal com notícias e comunicados  
 - Acesso rápido a áreas e departamentos  
-- Pesquisa global de conteúdos  
-- Interface moderna e responsiva  
+- Pesquisa global de conteúdos    
 
 ---
 
@@ -51,18 +50,12 @@ A intranet funciona como um ponto único de acesso à informação da empresa, p
 ---
 
 ### 🔄 Automatização de Processos
-- Fluxos de aprovação  
+- Fluxos de aprovação com vários niveis de aprovação
 - Notificações automáticas  
 - Gestão de pedidos internos  
 - Rastreabilidade de processos  
 
 ---
-
-### 🤝 Colaboração
-- Sites de equipa  
-- Partilha de ficheiros  
-- Coautoria de documentos em tempo real  
-- Integração com Microsoft Teams  
 
 ---
 
@@ -77,7 +70,6 @@ A intranet funciona como um ponto único de acesso à informação da empresa, p
 ### 📊 Comunicação Interna
 - Publicação de notícias  
 - Anúncios e eventos  
-- Comunicação segmentada por departamentos  
 
 ---
 
@@ -85,26 +77,16 @@ A intranet funciona como um ponto único de acesso à informação da empresa, p
 
 ### 🔹 Plataforma
 - Microsoft 365
-
-### 🔹 Ferramentas Principais
-- SharePoint Online  
-- Power Automate  
-- Power Apps  
-- Microsoft Teams  
-- OneDrive  
-- Outlook  
-
+- Sharepoint Online
 ---
 
 ## ⚙️ Características Técnicas
 
-- Solução Cloud (SaaS)  
+- Solução Cloud
 - Acesso via browser e dispositivos móveis  
 - Integração nativa com Microsoft 365  
 - Segurança empresarial (MFA, permissões)  
 - Conformidade com RGPD  
-- Alta disponibilidade (SLA ≥ 99.9%)  
-- Escalável e evolutiva  
 
 ---
 
@@ -112,10 +94,8 @@ A intranet funciona como um ponto único de acesso à informação da empresa, p
 
 - Redução da dispersão de informação  
 - Acesso rápido a documentos  
-- Aumento da produtividade  
 - Melhoria da comunicação interna  
 - Maior controlo e segurança da informação  
-- Promoção da cultura organizacional  
 
 ---
 
@@ -176,16 +156,6 @@ O projeto foi desenvolvido com uma abordagem **ágil e iterativa**, garantindo e
 
 ---
 
-## 👥 Equipa Envolvida
-
-- Gestor de Projeto  
-- Consultores funcionais  
-- Developers  
-- Testers  
-- Formadores  
-
----
-
 ## ⏱️ Cronograma
 
 - Início: Fevereiro 2026  
@@ -198,18 +168,7 @@ O projeto foi desenvolvido com uma abordagem **ágil e iterativa**, garantindo e
 
 - Solução dependente do Microsoft 365  
 - Licenciamento necessário para utilizadores  
-- Integrações externas não incluídas inicialmente  
 - Projeto executado maioritariamente de forma remota  
-
----
-
-## 🔮 Melhorias Futuras
-
-- Integração com ERP / CRM  
-- Dashboards com Power BI  
-- Apps internas com Power Apps  
-- Automação avançada de processos  
-- Integração com IA (Copilot)  
 
 ---
 
