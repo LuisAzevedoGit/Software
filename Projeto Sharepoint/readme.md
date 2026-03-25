@@ -1,6 +1,6 @@
 # 🛠️ Sistema de Monitorização de Produção via MQTT
 ## 🏢 Empresa
-- Tesco - Componentes para Automóveis, Lda.
+Tesco - Componentes para Automóveis, Lda.
 ## 👨‍💻 Desenvolvimento do Projeto
 - Luís Azevedo — Engenheiro Informático, Project Manager
 - Ricardo Silva — Manager departamento de compras, Project Manager
