@@ -267,7 +267,7 @@ A solução segue um modelo de **Enterprise Content Management (ECM)** baseado e
 
 ## 🔔 Notificações e Alertas
 
-Sistema automatizado com Power Automate:
+Sistema automatizado com:
 
 - Submissão de documentos  
 - Aprovação / rejeição  
@@ -276,11 +276,6 @@ Sistema automatizado com Power Automate:
 - Alertas de revisão periódica  
 - Processos pendentes  
 
-📩 Integração:
-- Outlook  
-- Microsoft Teams  
-
----
 
 ## 🔐 Gestão de Permissões
 
@@ -306,11 +301,6 @@ Sistema automatizado com Power Automate:
 
 - Microsoft 365  
 - SharePoint Online  
-- Power Automate  
-- Power Apps  
-- Microsoft Teams  
-- Outlook  
-- OneDrive  
 
 ---
 
@@ -357,15 +347,6 @@ Sistema automatizado com Power Automate:
 
 ---
 
-## 🔮 Melhorias Futuras
-
-- Integração com ERP / CRM  
-- Dashboards com Power BI  
-- Automação avançada  
-- Integração com IA (Copilot)  
-- Expansão para outros departamentos  
-
----
 
 ## 📌 Conclusão
 
