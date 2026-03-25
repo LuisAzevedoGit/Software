@@ -4,9 +4,9 @@
 - Tesco - Componentes para Automóveis, Lda.
 
 ## 👨‍💻 Desenvolvimento do Projeto
-- Luís Azevedo — Engenheiro Informático  
+- Luís Azevedo — Engenheiro Informático, desenvolvimento da solução relatada no documento
 - Ricardo Carvalho — Engenheiro do departamento de produção, Líder de projeto Shopfloor
-- Multiverso - Equipa Desenvolvimento do Software
+- Multiverso - Equipa Desenvolvimento do Software Shopfloor
 - Daniel Porras - Engenheiro de aplicações empresa FANUC Iberia S.L.U, suporte com base de dados MTLINKi 
 
 ## 📝 Autor da Documentação
