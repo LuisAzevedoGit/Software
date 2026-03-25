@@ -4,7 +4,7 @@
 - Tesco - Componentes para Automóveis, Lda.
 
 ## 👨‍💻 Desenvolvimento do Projeto
-- Luís Azevedo — Engenheiro Informático
+- Luís Azevedo — Engenheiro Informático, desenvolvimento da solução relatada no documento
 - Rui Martins — Engenheiro e Líder da Equipa de Manutenção
 ## 📝 Autor da Documentação
 - Luís Azevedo
