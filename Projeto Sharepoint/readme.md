@@ -348,22 +348,6 @@ Sistema automatizado com:
 ---
 
 
-## 📌 Conclusão
-
-Este projeto implementa uma solução completa de **Enterprise Content Management (ECM)**, permitindo à organização evoluir para um modelo digital estruturado, seguro e escalável.
-
-A plataforma garante controlo documental, automatização de processos e melhoria da eficiência operacional, alinhando-se com as melhores práticas do ecossistema Microsoft.
-
-
-
-
-
-
-
-
-
-
-
 ## ⚙️ Metodologia do Projeto
 
 O projeto foi desenvolvido com uma abordagem **ágil e iterativa**, garantindo entregas contínuas e validação constante.
@@ -374,7 +358,7 @@ O projeto foi desenvolvido com uma abordagem **ágil e iterativa**, garantindo e
    - Levantamento de requisitos  
    - Análise de processos  
 
-2. **Design & Prototipagem**
+2. **Design**
    - Definição da arquitetura  
    - Criação de protótipos  
 
@@ -417,4 +401,4 @@ O projeto foi desenvolvido com uma abordagem **ágil e iterativa**, garantindo e
 
 Este projeto representa um passo importante na **transformação digital da organização**, permitindo uma gestão mais eficiente da informação, melhor comunicação interna e maior produtividade das equipas.
 
-A parceria com a Hydra IT garante uma solução robusta, escalável e alinhada com as melhores práticas do ecossistema Microsoft.
+A parceria com a Hydra IT e ITGest garante uma solução robusta, escalável e alinhada com as melhores práticas do ecossistema Microsoft.
