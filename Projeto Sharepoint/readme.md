@@ -585,5 +585,3 @@ Após quebrar a herança, é possível:
 ## 📌 Conclusão
 
 Este projeto representa um passo importante na **transformação digital da organização**, permitindo uma gestão mais eficiente da informação, melhor comunicação interna e maior produtividade das equipas.
-
-A parceria com a Hydra IT e ITGest garante uma solução robusta, escalável e alinhada com as melhores práticas do ecossistema Microsoft.
