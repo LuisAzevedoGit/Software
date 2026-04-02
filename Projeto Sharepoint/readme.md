@@ -4,6 +4,9 @@ Tesco - Componentes para Automóveis, Lda.
 ## 👨‍💻 Desenvolvimento do Projeto
 - Luís Azevedo — Engenheiro Informático, Project Manager
 - Ricardo Silva — Manager departamento de compras, Project Manager
+- Artur Costa e João Manso - Departamento Quality Assurance
+- José Ferreira e Ana Lopes - Departamento de Compras
+- Rui Sá e Bruno Moreira - Departamento Engenharia Maquinagem
 - ITGest - Equipa Desenvolvimento do Software
 - Hydra.IT - Equipa Desenvolvimento do Software
 ## 📝 Autor da Documentação
