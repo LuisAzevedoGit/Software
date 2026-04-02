@@ -122,6 +122,56 @@ A intranet funciona como um ponto único de acesso à informação da empresa, p
 - Documentação histórica  
 - Gestão de retenção  
 
+
+
+### Estrutura de pastas Engenharia
+
+```sql
+Engenharia
+│
+├── Desenhos Internos
+│ ├── Registo de Desenhos Internos
+│ └── Produção em Massa
+│
+├── Desenhos Externos
+│ ├── Cotação
+│ └── Produção em Massa
+│
+└── Vendas
+├── Registo de Desenhos Externos
+└── Desenhos Cotados
+ ```
+
+### Estrutura de pastas Qualidade
+
+```sql
+Sistema documental
+│
+├── Gestao da qualidade
+│ ├── Açoes corretivas e preventivas
+│ └── Auditorias
+| └── Gestao de Reclamaçoes
+| └── Avaliaçoes
+| └── Indicadores de desempenho
+| └── Processos
+| └── Documentos sistema de gestão
+| └── Circulos da qualidade
+| └── Normas e requisitos
+| └── Organigrama
+| └── Planos de contigencia
+| └── PSB - Product Safety Representative
+| └── Certificados
+| └── Gestão de Fornecedores
+|
+│
+├── Documentaçao de produto e processo produtivo
+│ ├── Clitentes
+│ └── FMEA´s
+│ └── PPAP´s
+
+ ```
+
+
 ---
 
 
