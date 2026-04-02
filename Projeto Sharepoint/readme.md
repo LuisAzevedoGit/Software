@@ -277,13 +277,6 @@ Sistema automatizado com:
 - Processos pendentes  
 
 
-## 🔐 Gestão de Permissões
-
-### Perfis
-
-- Administrador  
-- Membro (edição)  
-- Visitante (consulta)  
 
 ---
 
@@ -383,11 +376,153 @@ O projeto foi desenvolvido com uma abordagem **ágil e iterativa**, garantindo e
 ## ⏱️ Cronograma
 
 - Início: Fevereiro 2026  
-- Go-Live: Março 2026  
+- Go-Live: Abril 2026  
 - Suporte pós Go-Live: 5 dias  
 
 ---
 
+## Criar grupos e Adicionar users
+
+- Início: Fevereiro 2026  
+- Go-Live: Abril 2026  
+- Suporte pós Go-Live: 5 dias  
+
+---
+## 🔐 Gestão de Utilizadores e Permissões
+
+A gestão de permissões no SharePoint é fundamental para garantir a segurança da informação e o acesso adequado aos conteúdos. Esta secção descreve como criar grupos, atribuir permissões e gerir heranças.
+
+---
+
+## 👥 Criação de Grupos
+
+Para uma gestão eficiente, é recomendado utilizar **grupos de utilizadores** em vez de permissões individuais.
+
+### 📌 Passos:
+
+1. Aceder ao portal SharePoint  
+2. Ir a **Settings (⚙️)**  
+3. Selecionar **Site Permissions**  
+4. Clicar em **Advanced permissions settings**  
+5. Selecionar **Create Group**  
+6. Definir:
+   - Nome do grupo  
+   - **Group Owner** → Boa prática: grupo de IT ou administração da plataforma  
+7. Atribuir o nível de permissões pretendido  
+8. Guardar  
+
+---
+
+## 🔑 Tipos de Permissões
+
+O SharePoint disponibiliza diferentes níveis de permissões:
+
+- **Full Control** → Controlo total sobre o site  
+- **Design** → Permite editar estrutura, conteúdos e aprovar itens  
+- **Edit** → Permite criar e editar listas e documentos  
+- **Contribute** → Permite adicionar e editar conteúdos  
+- **Read** → Apenas leitura  
+- **Restricted View** → Visualização apenas no browser (sem download)  
+
+---
+
+## ➕ Adicionar Utilizadores a um Grupo
+
+1. Aceder a:
+   - Settings → Site Permissions → Advanced permissions  
+2. Selecionar o grupo pretendido  
+3. Clicar em **New**  
+4. Introduzir o nome ou email do utilizador  
+5. Confirmar  
+
+---
+
+## 🔄 Herança de Permissões
+
+Por defeito, o SharePoint utiliza um modelo de **herança de permissões**:
+
+- As permissões atribuídas a um nível superior propagam-se automaticamente para os níveis inferiores  
+- Isto inclui:
+  - Sites  
+  - Bibliotecas  
+  - Pastas  
+  - Documentos  
+
+### 📌 Exemplo (Engenharia)
+```sql
+Engenharia
+│
+├── Desenhos Internos
+│ ├── Registo de Desenhos Internos
+│ └── Produção em Massa
+│
+├── Desenhos Externos
+│ ├── Cotação
+│ └── Produção em Massa
+│
+└── Vendas
+├── Registo de Desenhos Externos
+└── Desenhos Cotados
+ ```
+
+
+👉 Se um grupo tiver **Full Control** em `Desenhos Internos`, então terá automaticamente as mesmas permissões em:
+- Registo de Desenhos Internos  
+- Produção em Massa  
+
+---
+
+## ✂️ Quebrar a Herança de Permissões
+
+Em alguns casos, é necessário definir permissões específicas num nível inferior.
+
+### 📌 Quando usar:
+- Restringir acesso a determinadas áreas  
+- Alterar nível de permissões de um grupo  
+- Isolar informação sensível  
+
+---
+
+### ⚙️ Exemplo Prático
+
+Pretende-se que um grupo tenha apenas **Restricted View** na pasta `Produção em Massa`, apesar de ter permissões superiores no nível acima.
+
+### 📌 Passos:
+
+1. Aceder à biblioteca:
+   - **Desenhos Internos → Produção em Massa**  
+2. Ir a **Settings (⚙️)**  
+3. Selecionar **List Permissions**  
+4. Clicar em **Stop inheriting permissions**  
+5. Selecionar o grupo pretendido  
+6. Clicar em **Edit User Permissions**  
+7. Escolher o nível:
+   - **Restricted View**  
+8. Guardar  
+
+---
+
+## 🧩 Gestão Avançada
+
+Após quebrar a herança, é possível:
+
+- Adicionar novos grupos específicos  
+- Remover grupos existentes  
+- Definir permissões independentes do nível superior  
+
+---
+
+## ⚠️ Boas Práticas
+
+- Utilizar **grupos** em vez de permissões individuais  
+- Minimizar a quebra de herança (para evitar complexidade)  
+- Definir claramente:
+  - Quem pode editar  
+  - Quem pode apenas consultar  
+- Usar **Restricted View** para conteúdos sensíveis  
+- Documentar sempre alterações de permissões  
+
+---
 ## ⚠️ Considerações
 
 - Solução dependente do Microsoft 365  
