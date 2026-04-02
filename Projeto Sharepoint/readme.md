@@ -433,14 +433,6 @@ O projeto foi desenvolvido com uma abordagem **ágil e iterativa**, garantindo e
 - Suporte pós Go-Live: 5 dias  
 
 ---
-
-## Criar grupos e Adicionar users
-
-- Início: Fevereiro 2026  
-- Go-Live: Abril 2026  
-- Suporte pós Go-Live: 5 dias  
-
----
 ## 🔐 Gestão de Utilizadores e Permissões
 
 A gestão de permissões no SharePoint é fundamental para garantir a segurança da informação e o acesso adequado aos conteúdos. Esta secção descreve como criar grupos, atribuir permissões e gerir heranças.
