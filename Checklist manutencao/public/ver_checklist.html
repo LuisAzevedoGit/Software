@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ver Checklist</title>
+  <link rel="icon" href="./icon.png" type="image/png">
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<header>
+        <nav class="navbar">
+            <div class="logo-nome">
+            <a href="menu.html"><img src="imagens/Tesco (Medium).png" alt="Logo Tesco" class="logo"></a>
+                <span class="nome-empresa"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="checklist.html">Checklist Manutenção</a></li>
+                <li><a href="ver_checklist.html">Ver Checklists</a></li>
+                 <li><a href="editar.html">Editar Checklist</a></li>
+                <li><a href="assinar.html">Assinar</a></li>
+                <li><a href="ord-trabalho.html">Ordem Trabalho</a></li>
+                <li><a href="ver_ordens.html">Ver Ordens</a></li>
+                <li><a href="perfil.html"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+  <h1>Ver Registos de Checklist</h1>
+
+<div class="pesquisa-container">
+
+  <label for="filtro-id" class="pesquisa-label">ID Checklist:</label>
+  <input type="number" id="filtro-id" class="pesquisa-input" placeholder="Ex: 8">
+
+  <label for="filtro-maquina" class="pesquisa-label">Nº Máquina:</label>
+  <input type="number" id="filtro-maquina" class="pesquisa-input" placeholder="Ex: 13">
+
+  <button id="btn-filtrar" class="btn-padrao">Filtrar</button>
+
+</div>
+
+  <br>
+  <div id="registros"></div>
+
+  <div  class="pagination">
+    <button id="btn-anterior">Anterior</button>
+    <span id="pagina-info"></span>
+    <button id="btn-proximo">Próximo</button>
+  </div>
+  <a href="menu.html">Regressar menu!</a>
+   <script src="modelo_maquina.js"></script>
+  <script defer src="ver_checklist.js"></script>
+</body>
+</html>

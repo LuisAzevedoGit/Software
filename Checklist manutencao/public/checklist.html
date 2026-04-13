@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preencher Checklist</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="icon" href="./icon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <header>
+        <nav class="navbar">
+            <div class="logo-nome">
+            <a href="menu.html"><img src="imagens/Tesco (Medium).png" alt="Logo Tesco" class="logo"></a>
+                <span class="nome-empresa"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="checklist.html">Checklist Manutenção</a></li>
+                <li><a href="ver_checklist.html">Ver Checklists</a></li>
+                 <li><a href="editar.html">Editar Checklist</a></li>
+                <li><a href="assinar.html">Assinar</a></li>
+                <li><a href="ord-trabalho.html">Ordem Trabalho</a></li>
+                <li><a href="ver_ordens.html">Ver Ordens</a></li>
+                <li><a href="perfil.html"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+<h1>Preencher Checklist</h1>
+
+<div id="select-machine-container" class="card-selecao">
+  <label for="categoria" class="filtro-label">Categoria:</label>
+  <select id="categoria" class="filtro-select">
+    <option value="">Selecione uma categoria</option>
+    <option value="fundicao">Fundição</option>
+    <option value="ch1">CH1</option>
+    <option value="ch2">CH2</option>
+    <option value="ch3">CH3</option>
+    <option value="ch4">CH4</option>
+    <option value="ch5">CH5</option>
+    <option value="ch6">CH6</option>
+    <option value="ch7">CH7</option>
+    <option value="fh1">FH1</option>
+    <option value="fh2">FH2</option>
+    <option value="fh3">FH3</option>
+    <option value="fh4">FH4</option>
+    <option value="fh5">FH5</option>
+    <option value="fh7">FH7</option>
+    <option value="fh8">FH8</option>
+    <option value="g1">G1</option>
+    <option value="Hn_bracket">Hanon Bracket</option>
+    <option value="Hn_discharge">Hanon Discharge</option>
+    <option value="Hn_Motorhousing">Hanon MotorHousing</option>
+    <option value="ic1_ic3">IC1 e IC3</option>
+    <option value="NS3_NS4">NS3 e NS4</option>
+    <option value="NS5_NS6">NS5 e NS6</option>
+   
+  </select>
+
+  <label for="select-machine" class="filtro-label">Máquina:</label>
+  <div class="filtro-controles">
+    <select id="select-machine" class="filtro-select">
+      <option value="">Selecione uma máquina</option>
+    </select>
+    <button id="next-btn" class="btn-padrao">Próximo</button>
+  </div>
+</div>
+
+<!-- Formulário da checklist, que será exibido após escolher a máquina -->
+<form id="checklist-form">
+  <h2>Checklist para a Máquina <span id="maquina-nome">1</span></h2> <!-- Corrigir isto de forma que aparece o nome da maquina e nao o numero-->
+
+  <table border="1" id="tabela-checklist">
+    <thead>
+      <tr>
+        <th>Grupo</th>
+        <th>Item</th>
+        <th>Fazer</th>
+        <th>Material Necessário</th>
+        <th>Periodicidade</th>
+        <th>Tempo Execução</th>
+        <th>Status</th>
+        <th>Next Check</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Ações da checklist serão preenchidas aqui -->
+    </tbody>
+  </table>
+
+  <br>
+
+  <label for="relatorio">Relatório:</label><br>
+  <textarea id="relatorio" rows="5" cols="50"></textarea><br><br>
+
+  <div>
+    <label for="file">Anexar ficheiros</label>
+    <input type="file" id="file" name="file" multiple />
+  </div>
+
+
+  <br>
+  <input type="hidden" id="assinatura" value="null">
+
+  <button type="submit" id="submit-btn">Guardar!</button>
+</form>
+<script src="modelo_maquina.js"></script>
+<script src="checklist.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+
+
+</body>
+</html>

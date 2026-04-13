@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" href="./icon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Assinar</title>
+</head>
+<body>
+  <header>
+        <nav class="navbar">
+            <div class="logo-nome">
+            <a href="menu.html"><img src="imagens/Tesco (Medium).png" alt="Logo Tesco" class="logo"></a>
+                <span class="nome-empresa"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="checklist.html">Checklist Manutenção</a></li>
+                <li><a href="ver_checklist.html">Ver Checklists</a></li>
+                 <li><a href="editar.html">Editar Checklist</a></li>
+                <li><a href="assinar.html">Assinar</a></li>
+                <li><a href="ord-trabalho.html">Ordem Trabalho</a></li>
+                <li><a href="ver_ordens.html">Ver Ordens</a></li>
+                <li><a href="perfil.html"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>🔍 Assinar Registos</h1>
+
+  <div class="pesquisa-container">
+  <label for="id" class="pesquisa-label">ID do Registo:</label>
+  <input type="number" id="id" class="pesquisa-input" placeholder="Ex: 12">
+
+  <label for="data" class="pesquisa-label">Ou Data:</label>
+  <input type="date" id="data" class="pesquisa-input">
+
+  <button onclick="pesquisar()" class="btn-padrao">Pesquisar</button>
+</div>
+
+  <div id="resultados"></div>
+
+  <div id="assinatura-container" style="display: none;">
+    <h3>Assinar</h3>
+    <canvas id="canvas" width="500" height="150"></canvas>
+    <br>
+    <button onclick="limparCanvas()">Limpar Assinatura</button>
+    <button onclick="salvarAssinatura()">Salvar Assinatura</button>
+</div>
+
+
+<script src=assinatura.js></script>    
+<script src="pesquisar.js"></script>
+
+
+
+
+
+</body>
+</html>
