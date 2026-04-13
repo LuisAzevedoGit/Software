@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <title>Ver Ordens de Trabalho</title>
+  <link rel="icon" href="./icon.png" type="image/png">
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+   <header>
+        <nav class="navbar">
+            <div class="logo-nome">
+            <a href="menu.html"><img src="imagens/Tesco (Medium).png" alt="Logo Tesco" class="logo"></a>
+                <span class="nome-empresa"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="checklist.html">Checklist Manutenção</a></li>
+                <li><a href="ver_checklist.html">Ver Checklists</a></li>
+                 <li><a href="editar.html">Editar Checklist</a></li>
+                <li><a href="assinar.html">Assinar</a></li>
+                <li><a href="ord-trabalho.html">Ordem Trabalho</a></li>
+                <li><a href="ver_ordens.html">Ver Ordens</a></li>
+                <li><a href="perfil.html"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+  <h1>Ordens de Trabalho</h1>
+
+
+<div class="filtro-ordens-container">
+  <label for="filtroConcluido" class="pesquisa-label">Filtrar por estado de ordem:</label>
+  <div class="filtro-controles">
+    <select id="filtroConcluido" class="pesquisa-input">
+      <option value="todos">Todos</option>
+      <option value="true">Concluído</option>
+      <option value="false">Em progresso</option>
+    </select>
+    <button onclick="pesquisar()" class="btn-padrao">Filtrar</button>
+  </div>
+</div>
+
+
+  <div class="ordens-container" id="ordens"></div>
+
+  <script src="ver_ordens.js"></script>
+</body>
+</html>

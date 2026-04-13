@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="icon" href="./icon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Menu SQL</title>
+</head>
+<body>
+  <header>
+        <nav class="navbar">
+            <div class="logo-nome">
+            <a href="menu.html"><img src="imagens/Tesco (Medium).png" alt="Logo Tesco" class="logo"></a>
+                <span class="nome-empresa"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="checklist.html">Checklist Manutenção</a></li>
+                <li><a href="ver_checklist.html">Ver Checklists</a></li>
+                 <li><a href="editar.html">Editar Checklist</a></li>
+                <li><a href="assinar.html">Assinar</a></li>
+                <li><a href="ord-trabalho.html">Ordem Trabalho</a></li>
+                <li><a href="ver_ordens.html">Ver Ordens</a></li>
+                <li><a href="perfil.html"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <h1>🔍 Menu SQL</h1>
+
+  <div class="sql-container">
+    <textarea id="comandoSQL" rows="6" placeholder="Escreve o comando SQL aqui (ex: SELECT * FROM utilizadores)"></textarea>
+    <br>
+    <button onclick="sql()" class="btn-padrao">Executar comando</button>
+  </div>
+
+  <div id="resultadoSQL" class="resultado-container"></div>
+
+  <script>
+    // Bloqueia acesso a não-admins (nível < 3)
+    //const nivel = parseInt(localStorage.getItem("nivel_admin"));
+    //if (isNaN(nivel) || nivel < 3) {
+      //alert("Acesso restrito a administradores.");
+     //window.location.href = "menu.html";
+    //}
+
+    function sql() {
+      const comando = document.getElementById("comandoSQL").value.trim();
+
+      if (!comando) {
+        alert("Escreve um comando SQL válido.");
+        return;
+      }
+
+      fetch("/executar-sql", {
+        method: "POST",
+        headers: { "Content-Type": "application/json",   "Authorization": "Bearer " + localStorage.getItem("token") },
+        body: JSON.stringify({ comando })
+      })
+      .then(res => res.json())
+      .then(dados => {
+        const resultado = document.getElementById("resultadoSQL");
+        resultado.innerHTML = "";
+
+        if (dados.erro) {
+          resultado.innerHTML = `<p class="erro">Erro: ${dados.erro}</p>`;
+        } else if (Array.isArray(dados.resultado)) {
+          // Mostrar tabela com os resultados
+          let html = "<table border='1'><tr>";
+          const colunas = Object.keys(dados.resultado[0] || {});
+          colunas.forEach(col => html += `<th>${col}</th>`);
+          html += "</tr>";
+
+          dados.resultado.forEach(linha => {
+            html += "<tr>";
+            colunas.forEach(col => html += `<td>${linha[col]}</td>`);
+            html += "</tr>";
+          });
+
+          html += "</table>";
+          resultado.innerHTML = html;
+        } else {
+          resultado.innerHTML = "<p>Comando executado com sucesso.</p>";
+        }
+      })
+      .catch(err => {
+        document.getElementById("resultadoSQL").innerHTML = `<p class="erro">Erro: ${err.message}</p>`;
+      });
+    }
+  </script>
+</body>
+</html>
