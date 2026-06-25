@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Checklists de Maquinagem</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    padding: 20px;
+    font-size: 13px;
+    color: #1a1a2e;
+  }
+
+  header {
+    background: #fff;
+    padding: 16px 24px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo { height: 44px; }
+  .nav-links { display: flex; list-style: none; gap: 20px; }
+  .nav-links a { text-decoration: none; color: #444; font-weight: 500; font-size: 13px; }
+  .nav-links a:hover { color: #0055b3; }
+  .nav-links a.active { color: #0055b3; border-bottom: 2px solid #0055b3; padding-bottom: 2px; }
+
+  .container { max-width: 1600px; margin: 0 auto; }
+
+  h1 { font-size: 20px; font-weight: 600; color: #1a1a2e; }
+
+  /* === TOP BAR === */
+  .dash-topbar {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 20px; flex-wrap: wrap; gap: 12px;
+  }
+  .dash-topbar p { font-size: 12px; color: #666; margin-top: 4px; }
+
+  .dash-controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .dash-controls select,
+  .dash-controls input[type="week"] {
+    padding: 7px 12px;
+    border: 1.5px solid #ddd;
+    border-radius: 5px;
+    font-size: 13px;
+    min-width: 160px;
+    background: #fff;
+    color: #1a1a2e;
+  }
+  .dash-controls select:focus,
+  .dash-controls input[type="week"]:focus { outline: none; border-color: #0055b3; }
+
+  .btn-atualizar {
+    padding: 8px 18px;
+    background: #0055b3; color: #fff;
+    border: none; border-radius: 5px;
+    font-weight: 600; font-size: 13px;
+    cursor: pointer; transition: background 0.2s;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .btn-atualizar:hover { background: #003d82; }
+  .btn-atualizar.loading { opacity: 0.7; pointer-events: none; }
+
+  /* === KPI GRID === */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .kpi-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px 18px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    border-left: 4px solid #0055b3;
+  }
+  .kpi-card.kpi-green  { border-left-color: #2e7d32; }
+  .kpi-card.kpi-orange { border-left-color: #e07b00; }
+  .kpi-card.kpi-red    { border-left-color: #c62828; }
+  .kpi-card.kpi-purple { border-left-color: #6a1b9a; }
+
+  .kpi-label {
+    font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    color: #666; margin-bottom: 8px;
+  }
+  .kpi-value {
+    font-size: 28px; font-weight: 700; color: #1a1a2e; line-height: 1;
+  }
+  .kpi-sub {
+    font-size: 11px; color: #888; margin-top: 5px;
+  }
+  .kpi-pill {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    padding: 2px 8px; border-radius: 10px; margin-top: 6px;
+  }
+  .pill-ok   { background: #e8f5e9; color: #2e7d32; }
+  .pill-warn { background: #fff3e0; color: #e07b00; }
+  .pill-bad  { background: #ffebee; color: #c62828; }
+
+  /* === CARDS === */
+  .charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .chart-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+  .chart-card.full-width { grid-column: 1 / -1; }
+
+  .chart-title {
+    font-size: 13px; font-weight: 700;
+    color: #333; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px;
+    text-transform: uppercase; letter-spacing: 0.4px;
+  }
+  .chart-title .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+  }
+
+  /* Barras de conformidade */
+  .bar-secao-row {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+  }
+  .bar-secao-label { width: 90px; flex-shrink: 0; font-size: 12px; color: #555; }
+  .bar-secao-track {
+    flex: 1; height: 10px;
+    background: #f0f2f5; border-radius: 5px; overflow: hidden;
+  }
+  .bar-secao-fill { height: 100%; border-radius: 5px; transition: width 0.8s ease; }
+  .bar-secao-pct { width: 38px; text-align: right; font-size: 12px; font-weight: 700; color: #1a1a2e; }
+
+  /* Heatmap */
+  .heatmap-wrap { overflow-x: auto; }
+  .heatmap-grid {
+    display: grid;
+    grid-template-columns: 100px repeat(5, 1fr);
+    gap: 5px;
+    min-width: 480px;
+  }
+  .hm-header { text-align: center; font-size: 11px; font-weight: 700; color: #666; padding: 4px 0; }
+  .hm-label  { display: flex; align-items: center; font-size: 11px; color: #666; padding-right: 6px; }
+  .hm-cell {
+    height: 36px; border-radius: 5px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+    transition: opacity 0.2s; cursor: default;
+  }
+  .hm-cell:hover { opacity: 0.75; }
+
+  .hm-legend { display: flex; gap: 14px; margin-top: 12px; flex-wrap: wrap; }
+  .hm-legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #666; }
+  .hm-swatch { width: 10px; height: 10px; border-radius: 2px; }
+
+  /* Anomalias */
+  .anomaly-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .anomaly-table th {
+    text-align: left; padding: 7px 10px;
+    color: #666; font-weight: 600;
+    border-bottom: 1.5px solid #eee; white-space: nowrap;
+  }
+  .anomaly-table td { padding: 8px 10px; border-bottom: 1px solid #f0f2f5; }
+  .anomaly-table tbody tr:last-child td { border-bottom: none; }
+  .anomaly-table tbody tr:hover td { background: #fafafa; }
+
+  .badge {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    padding: 2px 7px; border-radius: 10px;
+  }
+  .badge-op  { background: #fff3e0; color: #e07b00; }
+  .badge-man { background: #e3f2fd; color: #1565c0; }
+  .badge-lid { background: #e8f5e9; color: #2e7d32; }
+
+  /* Legenda gráficos */
+  .chart-legend { display: flex; gap: 14px; margin-bottom: 10px; flex-wrap: wrap; }
+  .legend-item  { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #666; }
+  .legend-swatch { width: 10px; height: 10px; border-radius: 2px; }
+
+  /* Loading / empty */
+  .loading-state, .empty-state {
+    text-align: center; padding: 40px 20px;
+    color: #999; font-size: 13px;
+  }
+  .loading-state i { animation: spin 1s linear infinite; margin-right: 6px; }
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+  /* Footer */
+  .dash-footer {
+    display: flex; justify-content: space-between;
+    font-size: 11px; color: #aaa;
+    margin-top: 8px; flex-wrap: wrap; gap: 8px;
+  }
+
+  @media (max-width: 700px) {
+    .charts-grid { grid-template-columns: 1fr; }
+    .kpi-grid    { grid-template-columns: repeat(2, 1fr); }
+    
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div style="display:flex;align-items:center;gap:14px;">
+    <a href="menu.html"><img src="imagens/Tesco (Medium).png" alt="Logo" class="logo"></a>
+    <span style="font-weight:700;font-size:15px;color:#1a1a2e;">Sistema de Checklists</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+    <li><a href="checklist.html">Checklist Maquinagem</a></li>
+    <li><a href="listar.html">Listar Checklists</a></li>
+    <li><a href="ver.html">Ver Checklists</a></li>
+    
+  </ul>
+</header>
+
+<div class="container">
+
+  <div class="dash-topbar">
+    <div>
+      <h1>Dashboard de Maquinagem</h1>
+      <p id="dash-subtitle">A carregar dados...</p>
+    </div>
+    <div class="dash-controls">
+      <input type="week" id="ctrl-semana">
+      <select id="ctrl-linha">
+        <option value="">Todas as linhas</option>
+        <option value="99">Bracket AMG</option>
+        <option value="CH1">Cylinder Head 1</option>
+        <option value="CH2">Cylinder Head 2</option>
+        <option value="CH3">Cylinder Head 3</option>
+        <option value="CH4">Cylinder Head 4</option>
+        <option value="CH7">Cylinder Head 7</option>
+        <option value="FH1">Front Housing 1</option>
+        <option value="FH2">Front Housing 2</option>
+        <option value="FH3">Front Housing 3</option>
+        <option value="FH4">Front Housing 4</option>
+        <option value="FH5">Front Housing 5</option>
+        <option value="FH6">Front Housing 6</option>
+        <option value="FH7">Front Housing 7</option>
+        <option value="FH8">Front Housing 8</option>
+        <option value="MH">Motor Housing</option>
+      </select>
+      <button class="btn-atualizar" id="btn-atualizar">
+        <i class="fas fa-sync-alt"></i> Atualizar
+      </button>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="kpi-grid">
+    <div class="kpi-card kpi-blue">
+      <div class="kpi-label">Checklists registadas</div>
+      <div class="kpi-value" id="kpi-total">—</div>
+      <div class="kpi-sub">esta semana</div>
+    </div>
+    <div class="kpi-card kpi-green">
+      <div class="kpi-label">Conformidade global</div>
+      <div class="kpi-value" id="kpi-conf">—</div>
+      <div class="kpi-pill pill-ok" id="kpi-conf-pill">—</div>
+    </div>
+    <div class="kpi-card kpi-red">
+      <div class="kpi-label">Anomalias (X)</div>
+      <div class="kpi-value" id="kpi-anomalias">—</div>
+      <div class="kpi-sub">campos marcados X</div>
+    </div>
+    <div class="kpi-card kpi-orange">
+      <div class="kpi-label">Campos em falta</div>
+      <div class="kpi-value" id="kpi-falta">—</div>
+      <div class="kpi-sub">não preenchidos</div>
+    </div>
+    <div class="kpi-card kpi-purple">
+      <div class="kpi-label">Linhas ativas</div>
+      <div class="kpi-value" id="kpi-linhas">—</div>
+      <div class="kpi-sub">com registo</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Máquinas</div>
+      <div class="kpi-value" id="kpi-maquinas">—</div>
+      <div class="kpi-sub">registos únicos</div>
+    </div>
+  </div>
+
+  <!-- Linha 1: conformidade por secção + tendência -->
+  <div class="charts-grid">
+
+    <div class="chart-card">
+      <div class="chart-title">
+        <span class="dot" style="background:#e07b00;"></span>
+        Conformidade por secção
+      </div>
+      <div id="bars-secao">
+        <div class="loading-state"><i class="fas fa-spinner"></i> A calcular...</div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">
+        <span class="dot" style="background:#0055b3;"></span>
+        Tendência — últimas 6 semanas (%)
+      </div>
+      <div style="position:relative;height:200px;">
+        <canvas id="chart-trend" role="img" aria-label="Gráfico de tendência de conformidade nas últimas semanas">Tendência de conformidade semanal.</canvas>
+      </div>
+    </div>
+
+  </div>
+
+<!-- Linha 2: heatmap dias -->
+<!-- Linha 2: distribuição de campos -->
+  <div class="charts-grid">
+    <div class="chart-card full-width">
+      <div class="chart-title">
+        <span class="dot" style="background:#1565c0;"></span>
+        Distribuição de Campos
+      </div>
+      <div id="heatmap-grid" style="display:flex; flex-direction:column;"></div>
+    </div>
+  </div>
+
+  <!-- Linha 3: por linha + anomalias -->
+  <div class="charts-grid">
+
+    <div class="chart-card">
+   <div class="chart-title">
+  <span class="dot" style="background:#c62828;"></span>
+  Anomalias por linha de produção
+</div>
+
+      <div style="position:relative;" id="chart-linhas-wrap">
+        <canvas id="chart-linhas" role="img" aria-label="Conformidade por linha de produção">Conformidade por linha.</canvas>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">
+        <span class="dot" style="background:#c62828;"></span>
+        Últimas anomalias registadas
+      </div>
+      <div id="anomaly-container">
+        <div class="loading-state"><i class="fas fa-spinner"></i> A carregar...</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="dash-footer">
+    <span>Sistema de Checklists de Maquinagem</span>
+    <span id="dash-ts">—</span>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="modelo.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>
