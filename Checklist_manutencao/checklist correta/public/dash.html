@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="estilo.css">
+   <link rel="icon" href="./icon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+
+<header>
+  <nav class="navbar">
+
+    <div class="logo-nome">
+      <a href="menu.html">
+        <img src="imagens/Tesco (Medium).png"
+          alt="Logo Tesco"
+          class="logo">
+      </a>
+    </div>
+
+    <ul class="nav-links">
+                <li><a href="dash.html">Dashboard</a></li>
+                <li><a href="checklist.html">Checklist Manutenção</a></li>
+                <li><a href="ver_checklist.html">Ver Checklists</a></li>
+                <li><a href="ord-trabalho.html">Ordem Trabalho</a></li>
+                <li><a href="ver_ordens.html">Ver Ordens</a></li>
+                <li><a href="agenda_reparacoes.html">Agenda reparações</a></li>
+                <li><a href="vacudest.html">Outras verificações</a></li>
+                <li><a href="perfil.html"><i class="fas fa-user"></i></a></li>
+    </ul>
+
+  </nav>
+</header>
+
+<h1>📊 Dashboard Manutenção</h1>
+
+<div class="dashboard-cards">
+<div class="card-dashboard">
+    <h3>Checklists este mês</h3>
+    <span id="checklistsMes">0</span>
+  </div>
+
+    <div class="card-dashboard">
+    <h3>Ordens abertas</h3>
+    <span id="ordensAbertas">0</span>
+  </div>
+
+  <div class="card-dashboard">
+    <h3>Reparações atrasadas</h3>
+    <span id="reparacoesAtrasadas">0</span>
+  </div>
+
+
+  <div class="card-dashboard">
+    <h3>Reparações Urgentes Pendentes</h3>
+<span id="reparacoesUrgentes">0</span>
+  </div>
+
+</div>
+
+<div class="graficos">
+
+  <div class="grafico-box">
+    <h3>🔧 Máquinas com mais reparações pendentes</h3>
+    <canvas id="graficoLinhas"></canvas>
+  </div>
+
+   <div class="grafico-box">
+    <h3>🔧 Máquinas com mais reparações urgentes pendentes</h3>
+   <canvas id="graficoUrgentes"></canvas>
+  </div>
+
+  <div class="grafico-box">
+    <h3>👷 Reparações Pendentes por Responsável</h3>
+    <canvas id="graficoResponsaveis"></canvas>
+  </div>
+
+
+</div>
+
+<div class="dashboard-tabela">
+
+  <h3>⚠️ Reparações Atrasadas</h3>
+
+  <div id="tabela-atrasadas"></div>
+
+</div>
+
+<div class="dashboard-tabela">
+  <h3>🚨 Reparações Urgentes</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Máquina</th>
+        <th>Reparação</th>
+        <th>Responsável</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+
+    <tbody id="tabela-urgentes"></tbody>
+  </table>
+</div>
+
+
+
+<script src="dash.js"></script>
+
+</body>
+</html>

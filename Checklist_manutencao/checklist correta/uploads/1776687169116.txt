@@ -1,0 +1,38 @@
+problema porta ocupada da balança (shopfloor)
+
+1º -> Identificar o processo que está ocupando a COM8:
+
+Get-WmiObject Win32_SerialPort | Where-Object { $_.DeviceID -eq "COM8" } | Format-List *
+
+ou 
+
+Get-Process | Where-Object {
+    ($_ | Select-String "COM8") -ne $null
+}
+
+
+2º -> Desabilitar ou reconfigurar o outro programa/serviço
+
+services.msc --> Defina o tipo de inicialização como “Manual” ou “Desativado”.
+
+OU
+
+CASO SEJA UMA APLICAÇÃO:
+Gestor de Tarefas > Iniciar e desative.
+
+
+
+
+
+ALTERNATIVA:
+
+Script para liberar a COM8 automaticamente
+Se o processo ainda estiver usando a COM8 e não puder ser desativado, você pode criar um script que roda no boot para encerrar o processo invasor e iniciar o Shopfloor:
+
+
+@echo off
+timeout /t 10
+taskkill /f /im NOME_DO_PROCESSO.exe
+start "" "C:\Caminho\para\Shopfloor.exe"
+
+Coloque esse .bat no Inicializar ou como uma tarefa agendada com privilégio de Administrador.

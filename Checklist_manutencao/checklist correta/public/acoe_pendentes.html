@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Ações Pendentes</title>
+
+  <link rel="icon" href="./icon.png" type="image/png">
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+
+    <div class="logo-nome">
+      <a href="menu.html">
+        <img src="imagens/Tesco (Medium).png"
+          alt="Logo Tesco"
+          class="logo">
+      </a>
+    </div>
+
+    <ul class="nav-links">
+                <li><a href="dash.html">Dashboard</a></li>
+                <li><a href="checklist.html">Checklist Manutenção</a></li>
+                <li><a href="ver_checklist.html">Ver Checklists</a></li>
+                <li><a href="ord-trabalho.html">Ordem Trabalho</a></li>
+                <li><a href="ver_ordens.html">Ver Ordens</a></li>
+                <li><a href="agenda_reparacoes.html">Agenda reparações</a></li>
+                <li><a href="vacudest.html">Outras verificações</a></li>
+                <li><a href="perfil.html"><i class="fas fa-user"></i></a></li>
+    </ul>
+
+  </nav>
+</header>
+
+<h1>📋 Ações Não Realizadas</h1>
+
+<div class="dashboard-tabela">
+
+  <table>
+
+    <thead>
+
+      <tr>
+        <th>Checklist ID</th>
+        <th>Máquina</th>
+        <th>Grupo</th>
+        <th>Ação</th>
+        <th>Status</th>
+        <th>Próxima Verificação</th>
+        <th></th>
+      </tr>
+
+    </thead>
+
+    <tbody id="tabela-pendentes"></tbody>
+
+  </table>
+
+</div>
+
+<script src="acoes_pendentes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preencher Checklist</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="icon" href="./icon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <header>
+        <nav class="navbar">
+            <div class="logo-nome">
+            <a href="menu.html"><img src="imagens/Tesco (Medium).png" alt="Logo Tesco" class="logo"></a>
+                <span class="nome-empresa"></span>
+            </div>
+    <ul class="nav-links">
+              <li><a href="dash.html">Dashboard</a></li>
+                <li><a href="checklist.html">Checklist Manutenção</a></li>
+                <li><a href="ver_checklist.html">Ver Checklists</a></li>
+                <li><a href="ord-trabalho.html">Ordem Trabalho</a></li>
+                <li><a href="ver_ordens.html">Ver Ordens</a></li>
+                <li><a href="agenda_reparacoes.html">Agenda reparações</a></li>
+                <li><a href="vacudest.html">Outras verificações</a></li>
+                <li><a href="perfil.html"><i class="fas fa-user"></i></a></li>
+    </ul>
+        </nav>
+    </header>
+
+<div class="dashboard-tabela">
+<h1>Editar Reparações</h1>
+
+<label>ID da Ordem:</label>
+<input type="number" id="ordem_id">
+<button onclick="carregarOrdem()" class="btn-padrao">Carregar</button>
+
+<div id="editor"></div>
+
+<br>
+<button onclick="guardarAlteracoes()" class="btn-padrao">Guardar Alterações</button>
+
+</div>
+
+
+
+
+
+<script src="editar-ordens.js"></script>
+
+</body>
+</html>

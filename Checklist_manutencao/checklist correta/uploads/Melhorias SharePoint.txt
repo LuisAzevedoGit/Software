@@ -1,0 +1,9 @@
+Melhorias SharePoint:
+
+- Equipa de vendas acompanhar todo o processo dos desenhos externos: Faz o registo e monitoriza todo o processo restante
+- Duplicado ao selecionar os clientes no 2 portais.
+- Adicionei equipa de vendas à pagina "admin area", permissao de edit
+- Ao registar ser possivel escrever no campo "projeto"
+- Adicionar a minha conta na intranet "suporte"
+- Alterar o texto do "Portal de engenharia"
+- Biblioteca para os desenhos obsoletos. 
